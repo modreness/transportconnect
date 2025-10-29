@@ -73,6 +73,7 @@ function korisnikpodaci(){
 
 
 /*DODAJ UČENIKA*/
+<<<<<<< HEAD
 /* — NOVO: dodano spremanje nosilac_racuna i jmbg_roditelja + ispravno bind_param mapiranje — */
 function dodajUcenika(
     $ime, $prezime, $ime_oca, $ime_majke, $prezime_majke,
@@ -84,20 +85,33 @@ function dodajUcenika(
     $conn = dbConnect();
     
     // Jedinstven JMBG unutar ustanove
+=======
+function dodajUcenika($ime, $prezime, $ime_oca, $ime_majke, $prezime_majke, $datum_rodjenja, $jmbg, $spol, $adresa, $mjesto, $skolska_godina, $razred, $udaljenost, $iznos, $banka, $ziro_racun, $ustanova, $status_uplate, $status, $napomena)
+{
+    $conn = dbConnect();
+    
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
     $sql_check_jmbg = "SELECT COUNT(*) AS broj_unosa FROM ucenici WHERE jmbg = ? AND ustanova_id = ?";
     $stmt_check_jmbg = mysqli_prepare($conn, $sql_check_jmbg);
     mysqli_stmt_bind_param($stmt_check_jmbg, "si", $jmbg, $ustanova);
     mysqli_stmt_execute($stmt_check_jmbg);
     $result_check_jmbg = mysqli_stmt_get_result($stmt_check_jmbg);
     $row_check_jmbg = mysqli_fetch_assoc($result_check_jmbg);
+<<<<<<< HEAD
     $stmt_check_jmbg->close();
 
     if ($row_check_jmbg['broj_unosa'] > 0) {
+=======
+    if ($row_check_jmbg['broj_unosa'] > 0) {
+        // Unos sa istim JMBG-om već postoji, izbaci grešku i prekini daljnje izvršenje
+        $stmt_check_jmbg->close();
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
         $conn->close();
         header('Location: dashboard.php?action=ucenici&status=jmbg-postoji');
         exit;
     }
 
+<<<<<<< HEAD
     // Normalizacija opcionalnih polja
     $nosilac_racuna = trim((string)$nosilac_racuna);
     if ($nosilac_racuna === '') { $nosilac_racuna = null; }
@@ -129,6 +143,24 @@ function dodajUcenika(
     $stmt->close();
     $conn->close();
     return $ok;
+=======
+    // Unos ucenika u bazu podataka za skolsku godinu
+    $sql = "INSERT INTO ucenici (ime_ucenika, prezime_ucenika, ime_oca, ime_majke, prezime_majke, jmbg, datum_rodjenja, spol, mjesto_stanovanja, adresa_stanovanja, udaljenost_do_skole, razred, banka, broj_racuna, iznos, status_uplate, ustanova_id, id_godine, status, napomena) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssssssssisssiiiiis", $ime, $prezime, $ime_oca, $ime_majke, $prezime_majke, $jmbg, $datum_rodjenja, $spol, $mjesto, $adresa, $udaljenost, $razred, $banka, $ziro_racun, $iznos, $status_uplate, $ustanova, $skolska_godina, $status, $napomena);
+
+    if ($stmt->execute()) {
+        $stmt->close();
+        $conn->close();
+        return true;
+    } else {
+        $stmt->close();
+        $conn->close();
+        return false;
+    }
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
 }
 
 
@@ -162,6 +194,7 @@ function detaljiUcenika() {
 }
 
 /*IZMJENA STATUSA ODOBRENJA UČENIKA*/
+<<<<<<< HEAD
 /* — NOVO: ažurira i nosilac_racuna i jmbg_roditelja — */
 function izmjenaStatusaOdobrenja($id_ucenika, $status, $napomena, $nosilac_racuna = null, $jmbg_roditelja = null) {
     $conn = dbConnect();
@@ -194,6 +227,26 @@ function izmjenaStatusaOdobrenja($id_ucenika, $status, $napomena, $nosilac_racun
     return $ok;
 }
 
+=======
+function izmjenaStatusaOdobrenja($id_ucenika, $status, $napomena) {
+    $conn = dbConnect();
+    
+    $sql = "UPDATE ucenici SET status=?, napomena=? WHERE id_ucenika=?";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isi", $status, $napomena, $id_ucenika);
+    
+    if ($stmt->execute()) {
+        $stmt->close();
+        $conn->close();
+        return true;
+    } else {
+        $stmt->close();
+        $conn->close();
+        return false;
+    }
+}
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
 /*IZMJENA STATUSA UPLATE NAKNADE ZA  UČENIKA*/
 function izmjenaStatusaUplate($id_ucenika, $status_uplate) {
     $conn = dbConnect();
@@ -1306,4 +1359,8 @@ function listaObavjestenjaUnositelj() {
     }
     $conn->close();
     return $obv;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961

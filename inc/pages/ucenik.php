@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
 <div class="content">
     
     <div class="content-wrap">
@@ -27,6 +31,7 @@
                     echo number_format((float)$iznos, 2, '.', '').' KM';?></p>
                     </div>
                     
+<<<<<<< HEAD
                     <!-- podaci za isplatu -->
                     <div class="bigfield"><h2>Podaci za isplatu</h2></div>
                     <div class="smallfield">
@@ -54,6 +59,10 @@
                      <!---->
 
                      
+=======
+                    
+                </div>
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
                 <div class="form">
                      <div class="xsfield">
                          <label for="status">Izaberi status</label>
@@ -340,15 +349,21 @@
                     <h4>Podaci za naknadu prevoza</h4>
                 </div>
                 <div class="predmet-details">
+<<<<<<< HEAD
                     <p>Nosilac računa: <?php echo !empty($detaljiucenika['nosilac_racuna']) ? htmlspecialchars($detaljiucenika['nosilac_racuna']) : '/'; ?></p>
                     <p>JMBG roditelja: <?php echo !empty($detaljiucenika['jmbg_roditelja'])? htmlspecialchars($detaljiucenika['jmbg_roditelja']) : '/'; ?> </p>
+=======
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
                     <p>Udaljenost do škole: <?php echo $detaljiucenika['udaljenost_do_skole'].' km';?></p>
                     <p>Banka: <?php echo $detaljiucenika['banka'];?></p>
                     <p>Žiro račun: <?php echo $detaljiucenika['broj_racuna'];?></p>
                     <p>Iznos: <?php $iznos=$detaljiucenika['iznos']; 
                     echo number_format((float)$iznos, 2, '.', '').' KM';?></p>
                 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
                 <div class="predmet-flex btn-margin">
                     <h4>Podaci o statusu</h4>
                 </div>
@@ -368,7 +383,11 @@
                         </em>
                     </p>
                 </div>
+<<<<<<< HEAD
                             </div>
+=======
+                
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
                 
                 <?php if ($_SESSION['administrator'] == 1 || $_SESSION['administrator'] == 2) { ?>
                     <a class="dugmecta btn-margin" href="dashboard.php?action=ucenik&do=status&id=<?php echo $detaljiucenika['id_ucenika'];?>">Uredi odobrenje</a>
@@ -393,4 +412,7 @@
     </div>
 
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961

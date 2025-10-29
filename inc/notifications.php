@@ -157,6 +157,7 @@
             <center>Već postoji korisnik sa unesenom email adresom.</center>
         </div>';
     } 
+<<<<<<< HEAD
     
     elseif (isset($_GET['status']) && $_GET['status'] === 'ucenik-greska') {
         echo '<div class="greska">
@@ -177,5 +178,7 @@
     }
     
     
+=======
+>>>>>>> 4a063e1060e990edc73df0da7d84c2426ab06961
     ?>
 <!--END obavijesti-->
