@@ -1,0 +1,784 @@
+body {
+    font-family: montserrat;
+    margin: 0;
+    height: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100% !important;
+}
+.sidebar {
+    background: #00009f;
+    width: 20%;
+    padding: 20px 15px;
+}
+
+.main-content {
+    width: 80%;
+    background: #f7f7f7;
+    padding-bottom:50px;
+}
+
+.logo {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.sidebar h1 {
+    color: #fff;
+    font-size: 22px;
+    margin:0 0 15px 0;
+    border-bottom: 1px dotted #f7f7f7;
+    padding: 0 0 15px 0;
+}
+.sidebar a {
+    text-decoration:none;
+}
+.izbornik-wrapper {
+    margin-top: 25px;
+    padding: 10px 5px;
+    min-height: 70vh;
+    position: relative;
+}
+.izbornik-wrapper h2 {
+    margin:0 5px;
+    color:#fff;
+    font-weight:500;
+    padding-bottom:5px;
+    border-bottom:1px solid #fff;
+}
+.izbornik {
+    background: #f7f7f7;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    vertical-align: middle;
+    color: #06213F;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.izbornik:hover img{
+    transform: translateX(5px);
+}
+
+.izbornik img  {
+    width: 26px;
+    margin-right: 25px;
+    transition: all, 0.5s;
+}
+
+.izbornik-stavke {
+    padding: 5px 5px 5px 5px;
+    list-style: none;
+}
+.izbornik-stavke li {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px dotted #f7f7f7;
+}
+.izbornik-stavke li a { 
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    display: flex;
+    align-items:center;
+    column-gap:15px;
+    text-decoration: none;
+}
+.active {
+    background:#333;
+    border-radius:10px;
+}
+.izbornik-stavke svg {
+    width: 20px;
+    margin-right: 15px;
+    fill: #fff;
+}
+
+.svg-ikona {
+    transition: all, 0.1s;
+}
+.izbornik-stavke li:hover .svg-ikona {
+    transform: translateX(5px) !important;
+    fill: #00009f !important;
+}
+
+.izbornik-stavke li:hover {
+    background: #fff;
+    border-radius: 10px;
+    border-bottom: none;
+}
+
+.izbornik-stavke li:hover a{
+    color: #00009f !important;
+}
+
+
+
+/* MAIN CONTENT TRAKA */
+
+.main-content-traka {
+    background: #fff;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 25px;
+    column-gap: 0;
+    align-items: center;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+}
+
+.welcome {
+    display: flex;
+    vertical-align: middle;
+    width: 60%;
+    align-items: center;
+}
+
+.welcome h2 {
+    font-size: 18px;
+    color: #06213F;
+}
+
+.loged-user {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    column-gap:30px;
+    align-items: center;
+}
+
+.user-account {
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    column-gap:10px;
+    color: #00009f;
+}
+
+.user-svg {
+    fill: #00009f ;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.logout {
+    width: 10%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+
+
+.user-logout {
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    column-gap:10px;
+    color: #fff;
+    background:#00009f;
+    padding:5px 10px;
+    border-radius:10px;
+}
+.user-logout:hover {
+    background:#ff0000;
+}
+
+
+/* IZBORNIK BOTTOM */
+
+.izbornik-bottom {
+    position: absolute;
+    bottom: 20px;
+}
+
+/* BOXOVI ISPOD TRAKE */
+
+.main-content-boxovi {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 25px;
+    column-gap: 2%;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main-content-boxovi .box1, .main-content-boxovi .box2, .main-content-boxovi .box3 {
+    width: 32%;
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    border-left:4px solid green;
+    min-height: 50px;
+    position: relative;
+}
+
+.main-content-boxovi .box-top {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    column-gap:20px;
+}
+.box-top i {
+    display: block;
+    font-size: 50px;
+    color:#06213F;
+}
+.main-content-boxovi a {
+    text-decoration:none;
+    color:#06213F;
+}
+.main-content-boxovi h3 {
+    margin:0px;
+    font-size: 16px;
+    font-weight:400;
+    display:block;
+}
+
+.main-content-boxovi strong {
+    font-size: 26px;
+    color: #06213F;
+    display:block;
+    margin-top:5px;
+}
+
+.box-svg {
+    width: 30px;
+    margin-right: 20px;
+    fill: #06213F;
+}
+/*GREŠKE I OBAVIJESTI*/
+/*OBAVIJESTI */
+.uspjesno {
+    background:#4CAF50;
+    padding:15px;
+    text-align:center;
+    color:#fff;
+    font-size:15px;
+    font-family:Montserrat;
+}
+.verifikuj {
+    background:#FDFD96;
+    padding:15px;
+    text-align:center;
+    color:#000;
+    font-size:15px;
+    font-family:Montserrat;
+}
+.obavijest-blok {
+    margin-bottom:25px;
+    display:inline-block;
+}
+.greska {
+    background:#ff0000;
+    padding:15px;
+    text-align:center;
+    color:#fff;
+    font-size:15px;
+    font-family:Montserrat;
+}
+.obavjestenje {
+    margin:10px 25px;
+    background:#FDFD96;
+    padding:10px 15px;
+    text-align:left;
+    color:#666;
+    border-radius:10px;
+}
+.obavjestenje h3 {
+    margin:5px 0px;
+    font-size:16px;
+    font-family:Montserrat;
+    font-weight:bold;
+}
+.obavjestenje p {
+    margin:5px 0px;
+    font-size:14px;
+    font-family:Montserrat;
+}
+
+/*MAIN CONTENT ADD NEW*/
+.content {
+    margin: 10px 25px;
+    padding: 20px 20px 50px 20px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+}
+
+/*GRID CONTENT*/
+.content-wrap {
+    display: grid; /* Postavljanje na CSS grid */
+    grid-template-columns: 65% 30%; /* Postavljanje dvije kolone, prva će zauzimati 68% širine, a druga 30% */
+    grid-column-gap: 5%; /* Razmak između kolona */
+    grid-row-gap:20px;
+}
+.content-wrap h4 {
+    margin:0;
+    font-weight:500;
+}
+.content-wrap h5 {
+    margin:0;
+}
+.content-left {
+    width: 100%;
+    row-gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.content-right {
+    display: flex;
+    width: 100%;
+    row-gap: 25px;
+    flex-direction: column;
+}
+.content-left .dataTables_filter, .content-left .dataTables_length {
+  display: none; /* Sakrij polje za pretragu */
+}
+.content-right .dataTables_filter, .content-right .dataTables_length {
+  display: none; /* Sakrij polje za pretragu */
+}
+.content-right .tabela a {
+    text-decoration:none;
+    display:inline-block;
+    color:#06213F;
+}
+.content-left .tabela a {
+    text-decoration:none;
+    display:inline-block;
+}
+.content-left .tabela i {
+    color:#06213F;
+    background:#eee;
+    border-radius:50%;
+    padding:5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-left .tabela i:hover {
+    background:#06213F;
+    color:#fff;
+}
+.content-left .tabela table {
+    border-collapse: collapse;
+}
+.content-left .tabela td {
+    vertical-align:middle;
+}
+.content-left .tabela tr {
+    cursor:default;
+}
+/*DETALJI PREDMETA*/
+.predmet-wrap {
+    
+}
+.predmet-flex {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    background:#f7f7f7;
+    padding:10px 15px;
+}
+.predmet-details {
+    padding:10px 15px;
+}
+.predmet-wrap p {
+    margin:0;
+}
+.predmet-wrap h3 {
+    margin:0;
+    font-weight:500;
+}
+.predmet-details p {
+    border-bottom:1px dotted #eee;
+    padding:5px 0;
+}
+.form-wrap {
+    display: grid; /* Postavljanje na CSS grid */
+    grid-template-columns: 68% 30%; /* Postavljanje dvije kolone, prva će zauzimati 68% širine, a druga 30% */
+    grid-column-gap: 2%; /* Razmak između kolona */
+}
+.form {
+    width: 100%; /* Forma će zauzimati cijelu širinu prve kolone */
+}
+
+.form-right {
+    width: 100%; /* Form-right će zauzimati cijelu širinu druge kolone */
+}
+
+.form {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    column-gap:2%;
+    row-gap:25px;
+    flex-wrap:wrap;
+}
+.form input, .form select, .form textarea {
+    padding: 15px;
+    border: 0px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Montserrat;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    outline: 0px;
+    width:100%;
+}
+.form label {
+    display: inline-block;
+    background: #666;
+    opacity:0.7;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 10px;
+}
+.form input:read-only {
+    color:#ddd;
+    background:#f8f8f8;
+}
+.form input:focus, .form input:focus-visible {
+    outline:none;
+    background:#fffcd7;
+    border:0px;
+}
+.form input[type="date"] {
+    border-radius:0px 10px 10px 10px;
+}
+.button {
+    color:#fff;
+    font-family:Montserrat;
+    background:green;
+    padding:10px 20px;
+    font-size:18px;
+    border-radius:10px;
+    border:0px;
+    line-height:1.6;
+    opacity:0.7;
+    width:100%;
+    cursor:pointer;
+}
+.button:hover {
+    opacity:1;
+}
+.button-red {
+    color:#fff;
+    font-family:Montserrat;
+    background:#ff0000;
+    padding:10px 20px;
+    font-size:18px;
+    border-radius:10px;
+    border:0px;
+    line-height:1.6;
+    opacity:0.7;
+    width:100%;
+    cursor:pointer;
+}
+.button-red:hover {
+    opacity:1;
+}
+.dugmecta {
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    font-family:Montserrat;
+    background:green;
+    padding:10px 20px;
+    font-size:18px;
+    border-radius:10px;
+    border:0px;
+    line-height:1.6;
+    opacity:0.7;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+.dugmectared {
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    font-family:Montserrat;
+    background:#ff0000;
+    padding:10px 20px;
+    font-size:18px;
+    border-radius:10px;
+    border:0px;
+    line-height:1.6;
+    opacity:0.7;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+.dugmecta:hover, .dugmectared:hover {
+    opacity:1;
+}
+.backdugme {
+    font-size:14px;
+    font-family:Montserrat;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:10px;
+    color:#666;
+}
+.left-razmak {
+    margin-left:10px;
+}
+
+.xsdugme {
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    font-family:Montserrat;
+    background:green;
+    padding:5px 10px;
+    font-size:16px;
+    border-radius:10px;
+    border:0px;
+    line-height:1.6;
+    opacity:0.7;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+.xsdugme:hover {
+    opacity:1;
+}
+.btn-margin {
+    margin-top:30px;
+}
+
+.bigfield {
+    width:100%;
+}
+.bigfield h2 {
+    line-height:1.2em;
+    margin:10px 0 0;
+}
+.smallfield {
+    width:49%;
+}
+.xsfield {
+    width:32%;
+}
+
+.crvena-ikona {
+    color:#ff0000;
+}
+.zelena-ikona {
+    color:green;
+}
+
+/*SELECT 2*/
+ /* Stilizacija za Select2 */
+.select2-container {
+  width: 100%;
+}
+
+.select2-container .select2-selection--single {
+  height: 50px !important;
+  text-align:left !important;
+  line-height: 44px !important;
+  border: 0px !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  background: #f7f7f7 !important;
+}
+.select2-container .select2-selection--single span {
+    font-size:16px !important;
+    font-family:montserrat !important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 15px !important;
+  
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height:50px !important;
+}
+.select2-container .select2-selection--single .select2-selection__arrow {
+  top: 0px !important;
+  right: 15px !important;
+  height:50px !important;
+}
+
+/* Stilizacija za selektovane opcije */
+.select2-container .select2-selection--single .select2-selection__rendered {
+  color: #697A8D !important;
+}
+
+/* Stilizacija za dropdown */
+.select2-container--default .select2-results__option {
+  padding: 10px 15px !important;
+  font-size: 16px !important;
+  color: #697A8D !important;
+  font-family:Montserrat !important;
+}
+
+.select2-container--default .select2-results__option--highlighted {
+  background: #0078D4 !important;
+  color: #fff !important;
+}
+
+/* Stilizacija za search input u dropdownu */
+.select2-container--default .select2-search__field {
+  padding: 10px 15px !important;
+  font-size: 16px !important;
+  color: #697A8D !important;
+}
+
+
+/*DATATABLES*/
+.tabela thead {
+    margin-top: 20px;
+    background-color: #333;
+    
+}
+.tabela em {
+    font-size:12px;
+}
+.tabela table tr {
+    border-bottom:1px solid #eee !important;
+    cursor:pointer;
+}
+
+.tabela thead th {
+  color: #fff;
+  font-size:16px !important;
+    font-weight:400 !important;
+}
+.tabela thead th:last-child {
+    border-radius:0px 10px 10px 0px !important;
+}
+.tabela thead th:first-child {
+  border-radius:10px 0px 0px 10px !important;
+}
+.tabela tbody td {
+  vertical-align: top;
+}
+.tabela {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.dataTables_filter {
+  margin-bottom: 20px;
+}
+.tabela thead {
+  /* Dodajte margin između thead i tbody */
+  margin-bottom: 30px !important;
+}
+
+.tabela tbody {
+  /* Dodajte padding između thead i tbody */
+  padding-top: 10px;
+}
+
+.tabela-filter thead th, .tabela-filter tbody {
+    font-size:14px !important;
+}
+.tabela-filter tbody td {
+    vertical-align:top !important;
+}
+.tabela-obavjestenja tbody td {
+    vertical-align:top !important;
+}
+.tabela-obavjestenja tbody td h3 {
+    margin:0px;
+    padding:0px;
+    line-height:1;
+}
+/*Stilizacija excel pdf dugmadi*/
+.bottom {
+    margin-top: 20px;
+}
+.dataTables_wrapper .dt-buttons {
+  margin-top: 10px;
+}
+
+.dataTables_wrapper .dt-buttons .dt-button {
+  background-color: #4CAF50;
+  color: white; 
+  border: 1px solid #4CAF50; 
+  border-radius: 5px; 
+  padding: 8px 12px; 
+}
+
+.dataTables_wrapper .dt-buttons .dt-button:hover {
+  background-color: #ff0000 !important; 
+  border-color: #ff0000 !important;
+}
+
+/*Stilizacija paginacije*/
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background:#eee !important;
+    color:#000 !important;
+    border:0px !important;
+    outline:0px !important;
+    border-radius:5px !important;
+}
+
+
+/*Stilizacija hover paginacije*/
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: #ffffff !important;
+  border: 0px solid #000c9a91 !important;
+  outline:0px !important;
+  border-radius:5px !important;
+  background-color: #ddd !important;
+  background: #ddd !important;
+}
+
+/* Stilizacija selecta za lengthMenu */
+.dataTables_wrapper .dataTables_length select {
+  font-size: 14px;
+  padding: 9px 15px !important;
+  margin:0 10px;
+  border-radius: 5px;
+  border: 1px solid #06213F !important; 
+  background-color: #fff; 
+  color: #06213F; 
+}
+
+/* Stilizacija inputa za pretragu */
+.dataTables_wrapper .dataTables_filter input[type="search"] {
+  font-size: 14px;
+  margin-left:10px;
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  border: 1px solid #06213F;
+  background-color: #fff; 
+  color: #06213F; 
+  width:400px;
+}
+
+/* Stilizacija hover efekta za select i input */
+.dataTables_wrapper .dataTables_length select:hover,
+.dataTables_wrapper .dataTables_filter input[type="search"]:hover {
+  background-color: #f7f7f7; /* Boja pozadine na hover efektu */
+  outline:0px;
+}
+.dataTables_wrapper .dataTables_filter input[type="search"]:focus {
+    outline:0px !important;
+}
+
+    
+    #listaprijava td:nth-child(1) { width: 35% !important; }
+    #listaprijava td:nth-child(2) { width: 20%; }
+    #listaprijava td:nth-child(3) { width: 15%; }
+    #listaprijava td:nth-child(4) { width: 15%; }
+    #listaprijava td:nth-child(5) { width: 15%; }
